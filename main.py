@@ -3,9 +3,14 @@ from template_crud import TEMPLATE as template_crud
 from template_models import  TEMPLATE as template_model
 from template_schemas import TEMPLATE as template_schemas
 from auth_role_temp.template_route import TEMPLATE as auth_role_route_temp
+from auth_role_temp.template_model_user import TEMPLATE as auth_role_model_user_template
+from auth_role_temp.template_models_permission import TEMPLATE as auth_role_model_permission
+from auth_role_temp.template_models_permission_roles import TEMPLATE as auth_role_model_permission_role
+import shutil
 from template_main import TEMPLATE as template_main
 from template_database import TEMPLATE as template_database
 from template_global import TEMPLATE as gloabl_template
+from auth_role_temp.template_main import TEMPLATE as template_auth_main
 #from Utils.DirCreator import DirCreator
 import os
 from jinja2 import Template
@@ -112,14 +117,18 @@ class ProjectMaker:
         print('global_schemas.py created.')
 
 
-    def create_project(self):
+    def create_project(self , auth = False):
         temp_path = self.build_dir +"/"+ "main.py"
         self.create_global_schemas()
         self.create_databaseFile()
         self.create_database()
         self.MakeInitFIle()
+        if auth:
+            temp = template_auth_main
+        else:
+            temp = template_main
         with open(temp_path, 'w') as f:
-            f.write( getTemp(template_main , self.aliseNames ))
+            f.write( getTemp(temp , self.aliseNames ))
         print('Main.py created.')
         # self.MakeFile("main.py")
 
@@ -136,6 +145,22 @@ class ProjectMaker:
             self.TemplateFile(template_schemas)
             self.create_schemas()
 
+    def MakeAuthRoleProject(self , names):
+    
+                source_dir =  os.getcwd() + "/auth_role_temp/temps"
+                destination_dir = os.getcwd() + "/build/"+ self.projectName+"/"
+                shutil.copytree(source_dir, destination_dir , dirs_exist_ok=True)
+                for i in names:
+                    self.AliseName(i)
+                    self.makeDir()
+                    self.TemplateFile(auth_role_route_temp)
+                    self.create_routes()
+                    self.TemplateFile(template_crud)
+                    self.create_crud()
+                    self.TemplateFile(template_model)
+                    self.create_models()
+                    self.TemplateFile(template_schemas)
+                    self.create_schemas()
 
 
 print("""  
@@ -148,9 +173,13 @@ print("""
  #     # #    # #####  #####  #   #      #     # #       ### 
                                                              """)
 
-                                                             
+
 router  = ProjectMaker("labianoo")
-router.makeSimpleProject(["user" , "permission" , "product"])
-router.create_project()
+router.MakeAuthRoleProject([ "product"])
+router.create_project(True)
+
+# router.makeSimpleProject([ "product"])
+# router.create_project()
+
 
 

@@ -36,11 +36,11 @@ def delete_all_{{ element.names }}(db: Session = Depends(get_db)):
 	db_{{ element.name }} = crud.delete_all_{{ element.name }}(db)
 	raise  HTTPException(200, ResponseModel([] , "All {{ element.Name }}s Deleted" , True , 200 , {})) from None
 
-@router.get("/{ {{ element.name }}_id}", response_model={{ element.Name }})
+@router.get("/{ {{element.name }}_id}", response_model={{ element.Name }})
 def get_one_{{ element.name }}({{ element.name }}_id: int, db: Session = Depends(get_db)):
     db_{{ element.name }} = crud.get_{{ element.name }}(db, {{ element.name }}_id={{ element.name }}_id)
     if db_{{ element.name }} is None:
-        raise HTTPException(status_code=404, detail=ResponseModel([] , "{{ element.Name }} not found" , True , 404 , {}))
+        raise HTTPException(status_code=404, detail=ResponseModel([] , " {{ element.Name }} not found" , True , 404 , {}))
     return db_{{ element.name }}
 
 @router.put("/{id}")
