@@ -1,0 +1,310 @@
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: read__user
+    label: read__user
+
+
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: create__user
+    label: create__user
+
+
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: delete__user
+    label: delete__user
+
+
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: show__user
+    label: show__user
+
+
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: update__user
+    label: update__user
+
+
+
+- model: users.models.UserModel
+  id: 1 
+  fields:
+    title: delete__user
+    label: delete__user
+
+
+
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: read__permission
+    label: read__permission
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: create__permission
+    label: create__permission
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: delete__permission
+    label: delete__permission
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: show__permission
+    label: show__permission
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: update__permission
+    label: update__permission
+
+
+
+- model: permissions.models.PermissionModel
+  id: 1 
+  fields:
+    title: delete__permission
+    label: delete__permission
+
+
+
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: read__role_user
+    label: read__role_user
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: create__role_user
+    label: create__role_user
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: delete__role_user
+    label: delete__role_user
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: show__role_user
+    label: show__role_user
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: update__role_user
+    label: update__role_user
+
+
+
+- model: role_users.models.Role_userModel
+  id: 1 
+  fields:
+    title: delete__role_user
+    label: delete__role_user
+
+
+
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: read__role
+    label: read__role
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: create__role
+    label: create__role
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: delete__role
+    label: delete__role
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: show__role
+    label: show__role
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: update__role
+    label: update__role
+
+
+
+- model: roles.models.RoleModel
+  id: 1 
+  fields:
+    title: delete__role
+    label: delete__role
+
+
+
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: read__permission_role
+    label: read__permission_role
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: create__permission_role
+    label: create__permission_role
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: delete__permission_role
+    label: delete__permission_role
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: show__permission_role
+    label: show__permission_role
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: update__permission_role
+    label: update__permission_role
+
+
+
+- model: permission_roles.models.Permission_roleModel
+  id: 1 
+  fields:
+    title: delete__permission_role
+    label: delete__permission_role
+
+
+
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: read__product
+    label: read__product
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: create__product
+    label: create__product
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: delete__product
+    label: delete__product
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: show__product
+    label: show__product
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: update__product
+    label: update__product
+
+
+
+- model: products.models.ProductModel
+  id: 1 
+  fields:
+    title: delete__product
+    label: delete__product
+
+
+
+
+
+
+
+
+

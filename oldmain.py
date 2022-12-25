@@ -10,6 +10,7 @@ import shutil
 from template_main import TEMPLATE as template_main
 from template_database import TEMPLATE as template_database
 from template_global import TEMPLATE as gloabl_template
+from auth_role_temp.template_seeds import TEMPLATE as seed_temp
 from auth_role_temp.template_main import TEMPLATE as template_auth_main
 #from Utils.DirCreator import DirCreator
 import os
@@ -116,7 +117,13 @@ class ProjectMaker:
             f.write( getTemp(gloabl_template , "" ))
         print('global_schemas.py created.')
 
-
+    def create_seed(self , names):
+        full = ['user' , 'permission' ,  'role_user' , 'role' , 'permission_role'] + names
+        ele =  {'lista':full , "names":['read__' , 'create__' , 'delete__' , 'show__' , 'update__'  , 'delete__'] }
+        temp_path = self.build_dir +"/"+ "seeds.yaml"
+        with open(temp_path, 'w') as f:
+           f.write( getTemp(seed_temp , ele ))
+        print('seeds.yaml created.')
     def create_project(self , auth = False):
         temp_path = self.build_dir +"/"+ "main.py"
         self.create_global_schemas()
@@ -146,7 +153,8 @@ class ProjectMaker:
             self.create_schemas()
 
     def MakeAuthRoleProject(self , names):
-    
+                
+                self.create_seed(names)
                 source_dir =  os.getcwd() + "/auth_role_temp/temps"
                 destination_dir = os.getcwd() + "/build/"+ self.projectName+"/"
                 shutil.copytree(source_dir, destination_dir , dirs_exist_ok=True)
@@ -163,15 +171,15 @@ class ProjectMaker:
                     self.create_schemas()
 
 
-print("""  
- ######                                     #    ######  ### 
- #     #   ##   #####  #####  # #####      # #   #     #  #  
- #     #  #  #  #    # #    # #   #       #   #  #     #  #  
- ######  #    # #####  #####  #   #      #     # ######   #  
- #   #   ###### #    # #    # #   #      ####### #        #  
- #    #  #    # #    # #    # #   #      #     # #        #  
- #     # #    # #####  #####  #   #      #     # #       ### 
-                                                             """)
+# print("""  
+#  ######                                     #    ######  ### 
+#  #     #   ##   #####  #####  # #####      # #   #     #  #  
+#  #     #  #  #  #    # #    # #   #       #   #  #     #  #  
+#  ######  #    # #####  #####  #   #      #     # ######   #  
+#  #   #   ###### #    # #    # #   #      ####### #        #  
+#  #    #  #    # #    # #    # #   #      #     # #        #  
+#  #     # #    # #####  #####  #   #      #     # #       ### 
+#                                                              """)
 
 
 router  = ProjectMaker("labianoo")
